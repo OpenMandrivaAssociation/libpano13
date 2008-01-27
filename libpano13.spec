@@ -6,7 +6,7 @@
 
 %define name	libpano13
 %define version 2.9.12
-%define	rel	1
+%define	rel	2
 %if %bigfov
 %define distsuffix plf
 %endif
@@ -15,7 +15,7 @@
 
 %define lib_major 0
 %define libname %mklibname pano13_ %{lib_major}
-%define develname %mklibname -d pano13_
+%define develname %mklibname -d pano13
 
 Name:		%{name}
 Version:	%{version}
@@ -53,7 +53,7 @@ Libraries for Helmut Dersch's Panorama Tools.
 Summary:	Headers for developing programs that will use %{name}
 Group:		Development/C
 Requires:	%{libname} = %{version}-%{release}
-Obsoletes:  %mklibname -d %{name}_ 0
+Provides:	pano13-devel = %{version}-%{release}
 
 %description -n %{develname}
 Developent headers for Helmut Dersch's Panorama Tools.
