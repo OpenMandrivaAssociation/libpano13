@@ -6,7 +6,7 @@
 
 %define name	libpano13
 %define version 2.9.12
-%define	rel	4
+%define	rel	5
 %if %bigfov
 %define distsuffix plf
 %endif
@@ -33,11 +33,18 @@ BuildRequires:	zlib-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
-Utilies for Helmut Dersch's Panorama Tools.
+Helmut Dersch's Panorama Tools
 
 %if %bigfov
 This package is in PLF because there is a patent if FOV is > 160
 %endif
+
+%package tools
+Summary:	Panorama Tools library
+Group:		Graphics
+
+%description tools
+Utilies for Helmut Dersch's Panorama Tools.
 
 %package -n %{libname}
 Summary:	Panorama Tools library
@@ -86,7 +93,7 @@ rm -rf %{buildroot}
 %postun -n %{libname} -p /sbin/ldconfig
 %endif
 
-%files 
+%files tools
 %defattr (-,root,root)
 %doc gpl.txt README.linux README.windows
 %{_bindir}/PT*
