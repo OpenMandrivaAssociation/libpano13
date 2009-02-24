@@ -5,13 +5,14 @@
 %{?_with_plf: %{expand: %%global bigfov 1}}
 
 %define name	libpano13
-%define version 2.9.12
-%define	rel	6
+%define version 2.9.14
+%define beta beta1
+%define	rel	1
 %if %bigfov
 %define distsuffix plf
 %endif
 
-%define	release	%mkrel %{rel}
+%define	release	%mkrel 0.%{beta}.%{rel}
 
 %define lib_major 0
 %define libname %mklibname pano13_ %{lib_major}
@@ -23,7 +24,8 @@ Release:	%{release}
 Summary:	Panorama Tools library
 License:	GPL
 Group:		System/Libraries
-Source:		%{name}-%{version}.tar.gz
+Source:		%{name}-%{version}_%{beta}.tar.gz
+Patch:		string_literal.patch
 URL:		http://panotools.sourceforge.net/
 BuildRequires:	java-1.7.0-icedtea-devel
 BuildRequires:	libjpeg-devel
@@ -67,6 +69,7 @@ Developent headers for Helmut Dersch's Panorama Tools.
 
 %prep
 %setup -q
+%patch
 
 %build
 export LIBS="-lm"
@@ -98,6 +101,7 @@ rm -rf %{buildroot}
 %doc gpl.txt README.linux README.windows
 %{_bindir}/PT*
 %{_bindir}/panoinfo
+%{_mandir}/man1/*.1.*
 
 %files -n %{libname}
 %defattr (-,root,root)
