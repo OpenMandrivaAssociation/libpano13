@@ -6,13 +6,11 @@
 
 %define name	libpano13
 %define version 2.9.14
-%define beta beta2
-%define	rel	1
 %if %bigfov
 %define distsuffix plf
 %endif
 
-%define	release	%mkrel 0.%{beta}.%{rel}
+%define	release	%mkrel 1
 
 %define lib_major 0
 %define libname %mklibname pano13_ %{lib_major}
@@ -24,9 +22,9 @@ Release:	%{release}
 Summary:	Panorama Tools library
 License:	GPL
 Group:		System/Libraries
-Source:		%{name}-%{version}_%{beta}.tar.gz
-Patch:		string_literal.patch
 URL:		http://panotools.sourceforge.net/
+Source:		http://downloads.sourceforge.net/panotools/%{name}-%{version}.tar.gz
+Patch:		string_literal.patch
 BuildRequires:	java-1.7.0-icedtea-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
