@@ -5,7 +5,7 @@
 %{?_with_plf: %{expand: %%global bigfov 1}}
 
 %define name	libpano13
-%define version 2.9.14
+%define version 2.9.17
 %if %bigfov
 %define distsuffix plf
 %endif
@@ -109,3 +109,4 @@ rm -rf %{buildroot}
 %{_includedir}/pano13
 %{_libdir}/libpano13.la
 %{_libdir}/libpano13.so
+%{_libdir}/pkgconfig/*.pc
