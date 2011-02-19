@@ -8,6 +8,10 @@
 %define version 2.9.17
 %if %bigfov
 %define distsuffix plf
+%if %mdvver >= 201100
+# make EVR of plf build higher than regular to allow update, needed with rpm5 mkrel
+%define extrarelsuffix plf
+%endif
 %endif
 
 %define	release	%mkrel 3
@@ -17,7 +21,7 @@
 
 Name:		%{name}
 Version:	%{version}
-Release:	%{release}
+Release:	%{release}%{?extrarelsuffix}
 Summary:	Panorama Tools library
 License:	GPL
 Group:		System/Libraries
