@@ -10,7 +10,7 @@
 %define distsuffix plf
 %endif
 
-%define	release	%mkrel 1
+%define	release	%mkrel 2
 %define lib_major 0
 %define libname %mklibname pano13_ %{lib_major}
 %define develname %mklibname -d pano13
@@ -66,7 +66,7 @@ Developent headers for Helmut Dersch's Panorama Tools.
 
 %prep
 %setup -q
-%patch
+%patch -p 0
 
 %build
 export LIBS="-lm"
