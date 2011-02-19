@@ -49,8 +49,6 @@ Utilies for Helmut Dersch's Panorama Tools.
 Summary:	Panorama Tools library
 Group:		System/Libraries
 Provides:	%{name} = %{version}-%{release}
-Obsoletes:	libpano0
-Provides:	libpano0
 
 %description -n %{libname}
 Libraries for Helmut Dersch's Panorama Tools.
