@@ -10,8 +10,8 @@
 %define distsuffix plf
 %endif
 
-%define	release	%mkrel 2
-%define lib_major 0
+%define	release	%mkrel 3
+%define lib_major 2
 %define libname %mklibname pano13_ %{lib_major}
 %define develname %mklibname -d pano13
 
@@ -100,7 +100,7 @@ rm -rf %{buildroot}
 
 %files -n %{libname}
 %defattr (-,root,root)
-%{_libdir}/libpano13.so.*
+%{_libdir}/libpano13.so.%{lib_major}*
 
 %files -n %{develname}
 %defattr (-,root,root)
