@@ -5,7 +5,7 @@
 %{?_with_plf: %{expand: %%global bigfov 1}}
 
 %define name	libpano13
-%define version 2.9.17
+%define version 2.9.18
 %if %bigfov
 %define distsuffix plf
 %if %mdvver >= 201100
@@ -14,7 +14,7 @@
 %endif
 %endif
 
-%define	release	%mkrel 4
+%define	release	%mkrel 1
 %define lib_major 2
 %define libname %mklibname pano13_ %{lib_major}
 %define develname %mklibname -d pano13
@@ -23,11 +23,10 @@ Name:		%{name}
 Version:	%{version}
 Release:	%{release}%{?extrarelsuffix}
 Summary:	Panorama Tools library
-License:	GPL
+License:	GPLv2+
 Group:		System/Libraries
 URL:		http://panotools.sourceforge.net/
 Source:		http://downloads.sourceforge.net/panotools/%{name}-%{version}.tar.gz
-Patch:		string_literal.patch
 BuildRequires:	java-1.7.0-icedtea-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
@@ -36,7 +35,7 @@ BuildRequires:	zlib-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
-Helmut Dersch's Panorama Tools
+Helmut Dersch's Panorama Tools.
 
 %if %bigfov
 This package is in PLF because there is a patent if FOV is > 160
@@ -68,15 +67,17 @@ Developent headers for Helmut Dersch's Panorama Tools.
 
 %prep
 %setup -q
-%patch -p 0
 
 %build
 export LIBS="-lm"
 %if %bigfov
 perl -pi -e "s|\#define\s+MAX_FISHEYE_FOV.*|\#define MAX_FISHEYE_FOV 3600|" filter.h
 %endif
-export CFLAGS="$RPM_OPT_FLAGS -fPIC"
-%configure2_5x --enable-shared=yes --enable-static=no --disable-rpath
+export CFLAGS="%{optflags} -fPIC"
+%configure2_5x \
+	--enable-shared=yes \
+	--enable-static=no
+
 %make
 
 %install
@@ -97,7 +98,7 @@ rm -rf %{buildroot}
 
 %files tools
 %defattr (-,root,root)
-%doc gpl.txt README.linux README.windows
+%doc README.linux AUTHORS
 %{_bindir}/PT*
 %{_bindir}/panoinfo
 %{_mandir}/man1/*.1.*
