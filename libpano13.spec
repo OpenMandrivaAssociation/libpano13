@@ -14,7 +14,7 @@
 %endif
 %endif
 
-%define	release	%mkrel 2
+%define	release	%mkrel 3
 %define lib_major 2
 %define libname %mklibname pano13_ %{lib_major}
 %define develname %mklibname -d pano13
@@ -53,6 +53,7 @@ Summary:	Panorama Tools library
 Group:		System/Libraries
 Provides:	%{name} = %{version}-%{release}
 Obsoletes:	%{mklibname pano13_ 2} < 2.9.18
+Obsoletes:	%{_lib}pano13_0 < 2.9.18
 
 %description -n %{libname}
 Libraries for Helmut Dersch's Panorama Tools.
