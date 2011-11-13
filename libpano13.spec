@@ -14,7 +14,7 @@
 %endif
 %endif
 
-%define	release	%mkrel 3
+%define	release	%mkrel 4
 %define lib_major 2
 %define libname %mklibname pano13_ %{lib_major}
 %define develname %mklibname -d pano13
