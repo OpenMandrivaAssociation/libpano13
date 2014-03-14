@@ -16,19 +16,19 @@
 %endif
 %endif
 
-%define major	2
+%define major	3
 %define libname	%mklibname pano13_ %{major}
 %define devname	%mklibname -d pano13
 
 Summary:	Panorama Tools library
 Name:		libpano13
-Version:	2.9.18
-Release:	4%{?extrarelsuffix}
+Version:	2.9.19
+Release:	1%{?extrarelsuffix}
 License:	GPLv2+
 Group:		System/Libraries
 Url:		http://panotools.sourceforge.net/
-Source0:	http://downloads.sourceforge.net/panotools/%{name}-%{version}.tar.gz
-BuildRequires:	java-1.7.0-icedtea-devel
+Source0:	http://downloads.sourceforge.net/panotools/%{name}-%{version}_beta1.tar.gz
+BuildRequires:	java-devel
 BuildRequires:	jpeg-devel
 BuildRequires:	tiff-devel
 BuildRequires:	pkgconfig(libpng)
