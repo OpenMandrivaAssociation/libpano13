@@ -1,3 +1,4 @@
-sources:
+removed_sources:
   libpano13-2.9.18.tar.gz: 23849bdbdfc9176a2b53d157e58bd24aa0e7276e
-  libpano13-2.9.19_beta1.tar.gz: 695d6b26112ee18f3783b826e8c1c645f1b4ad2b
+sources:
+  libpano13-2.9.19.tar.gz: 85d8d94c96780fa5b6df2c2e4929f8d20557f128

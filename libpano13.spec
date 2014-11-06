@@ -23,11 +23,11 @@
 Summary:	Panorama Tools library
 Name:		libpano13
 Version:	2.9.19
-Release:	1%{?extrarelsuffix}
+Release:	2%{?extrarelsuffix}
 License:	GPLv2+
 Group:		System/Libraries
 Url:		http://panotools.sourceforge.net/
-Source0:	http://downloads.sourceforge.net/panotools/%{name}-%{version}_beta1.tar.gz
+Source0:	http://downloads.sourceforge.net/panotools/%{name}-%{version}.tar.gz
 BuildRequires:	java-devel
 BuildRequires:	jpeg-devel
 BuildRequires:	tiff-devel
@@ -74,7 +74,8 @@ sed -i -e "s|\#define\s+MAX_FISHEYE_FOV.*|\#define MAX_FISHEYE_FOV 3600|" filter
 %build
 export LIBS="-lm"
 export CFLAGS="%{optflags} -fPIC"
-%configure2_5x \
+export CC=gcc
+%configure \
 	--enable-shared=yes \
 	--enable-static=no
 
