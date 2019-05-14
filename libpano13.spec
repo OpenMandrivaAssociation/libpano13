@@ -27,7 +27,7 @@ Release:	0.rc2%{?extrarelsuffix}
 License:	GPLv2+
 Group:		System/Libraries
 Url:		http://panotools.sourceforge.net/
-Source0:	http://downloads.sourceforge.net/panotools/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/panotools/%{name}-%{version}_rc2.tar.gz
 BuildRequires:	java-devel
 BuildRequires:	jpeg-devel
 BuildRequires:	tiff-devel
