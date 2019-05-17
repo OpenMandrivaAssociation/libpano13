@@ -77,15 +77,15 @@ sed -i -e "s|\#define\s+MAX_FISHEYE_FOV.*|\#define MAX_FISHEYE_FOV 3600|" filter
 %build
 export LIBS="-lm"
 export CFLAGS="%{optflags} -fPIC"
-export CC=gcc
+#export CC=gcc
 %configure \
 	--enable-shared=yes \
 	--enable-static=no
 
-%make
+%make_build
 
 %install
-%makeinstall
+%make_install
 
 %files tools
 %doc README.linux AUTHORS
