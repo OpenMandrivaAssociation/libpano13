@@ -1,3 +1,6 @@
+%define _disable_ld_no_undefined 1
+%define _disable_lto 1
+
 %define bigfov 0
 # --with plf build libpano with fov > 160 support which is patent covered
 # or have some legal issue, so disabled by default
