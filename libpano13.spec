@@ -1,3 +1,6 @@
+%define _disable_ld_no_undefined 1
+%define _disable_lto 1
+
 %define bigfov 0
 # --with plf build libpano with fov > 160 support which is patent covered
 # or have some legal issue, so disabled by default
@@ -22,12 +25,12 @@
 
 Summary:	Panorama Tools library
 Name:		libpano13
-Version:	2.9.19
-Release:	2%{?extrarelsuffix}
+Version:	2.9.20
+Release:	0.rc2%{?extrarelsuffix}
 License:	GPLv2+
 Group:		System/Libraries
 Url:		http://panotools.sourceforge.net/
-Source0:	http://downloads.sourceforge.net/panotools/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/panotools/%{name}-%{version}_rc2.tar.gz
 BuildRequires:	java-devel
 BuildRequires:	jpeg-devel
 BuildRequires:	tiff-devel
@@ -74,15 +77,15 @@ sed -i -e "s|\#define\s+MAX_FISHEYE_FOV.*|\#define MAX_FISHEYE_FOV 3600|" filter
 %build
 export LIBS="-lm"
 export CFLAGS="%{optflags} -fPIC"
-export CC=gcc
+#export CC=gcc
 %configure \
 	--enable-shared=yes \
 	--enable-static=no
 
-%make
+%make_build
 
 %install
-%makeinstall
+%make_install
 
 %files tools
 %doc README.linux AUTHORS
