@@ -31,6 +31,7 @@ License:	GPLv2+
 Group:		System/Libraries
 Url:		http://panotools.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/panotools/%{name}-%{version}.tar.gz
+BuildRequires:	cmnake
 BuildRequires:	java-devel
 BuildRequires:	jpeg-devel
 BuildRequires:	tiff-devel
@@ -75,16 +76,12 @@ sed -i -e "s|\#define\s+MAX_FISHEYE_FOV.*|\#define MAX_FISHEYE_FOV 3600|" filter
 %endif
 
 %build
-export LIBS="-lm"
-export CFLAGS="%{optflags} -fPIC"
-%configure \
-	--enable-shared=yes \
-	--enable-static=no
+%cmake
 
 %make_build
 
 %install
-%make_install
+%make_install -C build
 
 %files tools
 %doc README.linux AUTHORS
