@@ -83,8 +83,10 @@ sed -i -e "s|\#define\s+MAX_FISHEYE_FOV.*|\#define MAX_FISHEYE_FOV 3600|" filter
 %install
 %make_install -C build
 
+rm -f %{buildroot}/%{_libdir}/libpano13.a
+
 %files tools
-%doc AUTHORS
+%doc %{_datadir}/pano13/doc/
 %{_bindir}/PT*
 %{_bindir}/panoinfo
 %{_mandir}/man1/*.1.*
