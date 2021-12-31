@@ -84,7 +84,7 @@ sed -i -e "s|\#define\s+MAX_FISHEYE_FOV.*|\#define MAX_FISHEYE_FOV 3600|" filter
 %make_install -C build
 
 %files tools
-%doc README.linux AUTHORS
+%doc AUTHORS
 %{_bindir}/PT*
 %{_bindir}/panoinfo
 %{_mandir}/man1/*.1.*
