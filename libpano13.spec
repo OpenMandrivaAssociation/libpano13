@@ -31,7 +31,7 @@ License:	GPLv2+
 Group:		System/Libraries
 Url:		http://panotools.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/panotools/%{name}-%{version}.tar.gz
-BuildRequires:	cmnake
+BuildRequires:	cmake
 BuildRequires:	java-devel
 BuildRequires:	jpeg-devel
 BuildRequires:	tiff-devel
