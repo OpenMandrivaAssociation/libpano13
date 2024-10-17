@@ -29,7 +29,7 @@ Version:	2.9.22
 Release:	1%{?extrarelsuffix}1
 License:	GPLv2+
 Group:		System/Libraries
-Url:		http://panotools.sourceforge.net/
+Url:		https://panotools.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/panotools/%{name}-%{version}.tar.gz
 BuildRequires:	cmake
 BuildRequires:	java-devel
