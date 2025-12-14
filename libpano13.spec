@@ -25,7 +25,7 @@
 
 Summary:	Panorama Tools library
 Name:		libpano13
-Version:	2.9.22
+Version:	2.9.23
 Release:	1%{?extrarelsuffix}1
 License:	GPLv2+
 Group:		System/Libraries
